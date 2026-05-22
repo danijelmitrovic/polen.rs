@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polen Srbija — Alergijski Indeks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🌿</span>
+      <span class="logo-text" onclick="goBack()" style="cursor:pointer">Polen<em>RS</em></span>
+    </div>
+    <div class="header-right">
+      <span id="headerDate" class="header-date"></span>
+      <div class="theme-toggle" id="themeToggle" title="Promeni temu">
+        <div class="theme-toggle-opt" id="optDark"  onclick="setTheme('dark')">🌙</div>
+        <div class="theme-toggle-opt" id="optLight" onclick="setTheme('light')">☀️</div>
+      </div>
+      <button class="info-btn" onclick="toggleInfo()">? Indeks</button>
+    </div>
+  </header>
+
+  <!-- INFO OVERLAY -->
+  <div id="infoOverlay" class="overlay" style="display:none">
+    <div class="overlay-box">
+      <div class="overlay-title">Razumevanje indeksa</div>
+      <div class="legend-grid">
+        <div class="legend-item" style="--c:#4ade80"><span class="dot"></span><div><strong>0–10 · Nizak</strong><p>Bezbedno za većinu. Minimalni simptomi čak i kod osetljivih osoba.</p></div></div>
+        <div class="legend-item" style="--c:#facc15"><span class="dot"></span><div><strong>10–30 · Umeren</strong><p>Osetljive osobe mogu imati blage simptome. Preporučuje se oprez.</p></div></div>
+        <div class="legend-item" style="--c:#fb923c"><span class="dot"></span><div><strong>30–60 · Visok</strong><p>Simptomi verovatni kod alergičara. Uzimajte lekove preventivno.</p></div></div>
+        <div class="legend-item" style="--c:#f87171"><span class="dot"></span><div><strong>60–120 · Veoma visok</strong><p>Izbegavajte boravak napolju. Zatvorite prozore.</p></div></div>
+        <div class="legend-item" style="--c:#c084fc"><span class="dot"></span><div><strong>120+ · Ekstremno</strong><p>Ostanite unutra. Konsultujte se sa lekarom.</p></div></div>
+      </div>
+      <button class="overlay-close" onclick="toggleInfo()">Zatvori</button>
+    </div>
+  </div>
+
+  <!-- PAGE BODY -->
+  <div class="page">
+
+    <!-- CITY SECTION -->
+    <section class="city-section" id="citySection">
+      <h2>Izaberi grad</h2>
+      <div class="city-grid" id="cityGrid"></div>
+    </section>
+
+    <!-- DASHBOARD (hidden until city selected) -->
+    <section class="dashboard" id="dashboard" style="display:none">
+      <div class="dash-top">
+        <div>
+          <h2 id="cityName">—</h2>
+          <p class="city-coords" id="cityCoords"></p>
+        </div>
+        <button class="back-btn" onclick="goBack()">← Svi gradovi</button>
+      </div>
+
+      <!-- Loading -->
+      <div id="loadingWrap" class="loading-state" style="display:none">
+        <div class="spinner"></div>
+        <p>Učitavam podatke...</p>
+      </div>
+
+      <!-- Results -->
+      <div id="results" style="display:none">
+
+        <!-- Tip bar na vrhu -->
+        <div class="tip-bar" id="tipBar">
+          <div class="tip-top">
+            <span class="tip-badge" id="tipBadge"></span>
+            <strong id="tipTitle"></strong>
+          </div>
+          <p id="tipDesc"></p>
+        </div>
+
+        <!-- 3 grupe -->
+        <div class="groups" id="groupsWrap"></div>
+
+        <!-- Chart -->
+        <div class="chart-section">
+          <div class="chart-label">5-dnevna prognoza · dnevni maksimum (zrna/m³)</div>
+          <div class="chart-wrap" id="chartWrap"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LEGEND SECTION -->
+    <section class="legend-section" id="legendSection">
+      <h2>Razumevanje indeksa</h2>
+      <div class="legend-grid-inline">
+        <div class="legend-item" style="--c:#4ade80"><span class="dot"></span><div><strong>0–10 · Nizak</strong><p>Bezbedno za većinu. Minimalni simptomi čak i kod osetljivih osoba.</p></div></div>
+        <div class="legend-item" style="--c:#facc15"><span class="dot"></span><div><strong>10–30 · Umeren</strong><p>Osetljive osobe mogu imati blage simptome. Preporučuje se oprez.</p></div></div>
+        <div class="legend-item" style="--c:#fb923c"><span class="dot"></span><div><strong>30–60 · Visok</strong><p>Simptomi verovatni kod alergičara. Uzimajte lekove preventivno.</p></div></div>
+        <div class="legend-item" style="--c:#f87171"><span class="dot"></span><div><strong>60–120 · Veoma visok</strong><p>Izbegavajte boravak napolju. Zatvorite prozore.</p></div></div>
+        <div class="legend-item" style="--c:#c084fc"><span class="dot"></span><div><strong>120+ · Ekstremno</strong><p>Ostanite unutra. Konsultujte se sa lekarom.</p></div></div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Podaci: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> · Ovaj sajt je informativnog karaktera i ne zamenjuje medicinski savet.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
