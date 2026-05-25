@@ -3,110 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polen Srbija — Alergijski Indeks</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>PolenRS — Alergijski indeks polena u Srbiji</title>
+  <meta name="description" content="Pratite koncentracije polena u gradovima Srbije. Svakodnevna merenja drveća, trava i korova." />
+  <link rel="canonical" href="https://polen.rs/" />
+  <meta property="og:title" content="PolenRS — Alergijski indeks polena u Srbiji" />
+  <meta property="og:description" content="Pratite koncentracije polena u gradovima Srbije. Svakodnevna merenja drveća, trava i korova." />
+  <meta property="og:url" content="https://polen.rs/" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/style.css" />
+  <script>
+    (function() {
+      var t = localStorage.getItem('polenTheme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
-<body>
+<body class="page-index">
 
   <header>
-    <div class="logo">
+    <a href="/" class="logo">
       <span class="logo-icon">🌿</span>
-      <span class="logo-text" onclick="goBack()" style="cursor:pointer">Polen<em>RS</em></span>
-    </div>
+      <span class="logo-text">Polen<em>RS</em></span>
+    </a>
     <div class="header-right">
       <span id="headerDate" class="header-date"></span>
-      <div class="theme-toggle" id="themeToggle" title="Promeni temu">
+      <div class="theme-toggle">
         <div class="theme-toggle-opt" id="optDark"  onclick="setTheme('dark')">🌙</div>
         <div class="theme-toggle-opt" id="optLight" onclick="setTheme('light')">☀️</div>
       </div>
-      <button class="info-btn" onclick="toggleInfo()">? Indeks</button>
     </div>
   </header>
 
-  <!-- INFO OVERLAY -->
-  <div id="infoOverlay" class="overlay" style="display:none">
-    <div class="overlay-box">
-      <div class="overlay-title">Razumevanje indeksa</div>
-      <div class="legend-grid">
-        <div class="legend-item" style="--c:#4ade80"><span class="dot"></span><div><strong>0–10 · Nizak</strong><p>Bezbedno za većinu. Minimalni simptomi čak i kod osetljivih osoba.</p></div></div>
-        <div class="legend-item" style="--c:#facc15"><span class="dot"></span><div><strong>10–30 · Umeren</strong><p>Osetljive osobe mogu imati blage simptome. Preporučuje se oprez.</p></div></div>
-        <div class="legend-item" style="--c:#fb923c"><span class="dot"></span><div><strong>30–60 · Visok</strong><p>Simptomi verovatni kod alergičara. Uzimajte lekove preventivno.</p></div></div>
-        <div class="legend-item" style="--c:#f87171"><span class="dot"></span><div><strong>60–120 · Veoma visok</strong><p>Izbegavajte boravak napolju. Zatvorite prozore.</p></div></div>
-        <div class="legend-item" style="--c:#c084fc"><span class="dot"></span><div><strong>120+ · Ekstremno</strong><p>Ostanite unutra. Konsultujte se sa lekarom.</p></div></div>
+  <main class="page">
+    
+    <section class="city-section">
+      <h1>Koncentracije polena u Srbiji</h1>
+<div class="city-grid">
+        
+      <a href="/beograd-zeleno-brdo/" class="city-card">
+        <div class="city-card-name">Beograd - Zeleno Brdo</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/beograd-novi-beograd/" class="city-card">
+        <div class="city-card-name">Beograd - Novi Beograd</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/beograd-cukarica/" class="city-card">
+        <div class="city-card-name">Beograd - Čukarica</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/nis/" class="city-card">
+        <div class="city-card-name">Niš</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/kragujevac/" class="city-card">
+        <div class="city-card-name">Kragujevac</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/subotica/" class="city-card">
+        <div class="city-card-name">Subotica</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/cacak/" class="city-card">
+        <div class="city-card-name">Čačak</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/krusevac/" class="city-card">
+        <div class="city-card-name">Kruševac</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/kraljevo/" class="city-card">
+        <div class="city-card-name">Kraljevo</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/vranje/" class="city-card">
+        <div class="city-card-name">Vranje</div>
+        <span class="city-card-arrow">→</span>
+      </a>
+
+      <a href="/novi-pazar/" class="city-card">
+        <div class="city-card-name">Novi Pazar</div>
+        <span class="city-card-arrow">→</span>
+      </a>
       </div>
-      <button class="overlay-close" onclick="toggleInfo()">Zatvori</button>
+    </section>
+
+    <section class="other-cities-section">
+      <p class="other-cities-label"><strong>Pogledaj još gradova</strong></p>
+      <div class="other-cities-list">
+        <a href="/becej/" class="other-city-link">Bečej</a>
+<a href="/kanjiza/" class="other-city-link">Kanjiža</a>
+<a href="/kikinda/" class="other-city-link">Kikinda</a>
+<a href="/kula/" class="other-city-link">Kula</a>
+<a href="/loznica/" class="other-city-link">Loznica</a>
+<a href="/obrenovac/" class="other-city-link">Obrenovac</a>
+<a href="/pancevo/" class="other-city-link">Pančevo</a>
+<a href="/pozarevac/" class="other-city-link">Požarevac</a>
+<a href="/sokobanja/" class="other-city-link">Sokobanja</a>
+<a href="/sombor/" class="other-city-link">Sombor</a>
+<a href="/sremska-mitrovica/" class="other-city-link">Sremska Mitrovica</a>
+<a href="/valjevo/" class="other-city-link">Valjevo</a>
+<a href="/vrbas/" class="other-city-link">Vrbas</a>
+<a href="/vrsac/" class="other-city-link">Vršac</a>
+<a href="/zajecar/" class="other-city-link">Zaječar</a>
+<a href="/zlatibor/" class="other-city-link">Zlatibor</a>
+<a href="/zrenjanin/" class="other-city-link">Zrenjanin</a>
+      </div>
+    </section>
+
+    
+  <section class="legend-section">
+    <h2>Razumevanje indeksa</h2>
+    <div class="legend-grid">
+      <div class="legend-item" style="--c:#34a853"><span class="dot"></span><div><strong>0–9 · Nizak</strong><p>Bezbedno za većinu. Minimalni simptomi kod osetljivih osoba.</p></div></div>
+      <div class="legend-item" style="--c:#fbbc04"><span class="dot"></span><div><strong>10–29 · Umeren</strong><p>Blagi simptomi mogući kod alergičara. Preporučuje se oprez.</p></div></div>
+      <div class="legend-item" style="--c:#fa7b17"><span class="dot"></span><div><strong>30–59 · Visok</strong><p>Simptomi verovatni. Uzimajte lekove preventivno.</p></div></div>
+      <div class="legend-item" style="--c:#ea4335"><span class="dot"></span><div><strong>60–119 · Veoma visok</strong><p>Izbegavajte boravak napolju. Zatvorite prozore.</p></div></div>
+      <div class="legend-item" style="--c:#a142f4"><span class="dot"></span><div><strong>120+ · Ekstremno</strong><p>Ostanite unutra. Konsultujte se sa lekarom.</p></div></div>
     </div>
-  </div>
-
-  <!-- PAGE BODY -->
-  <div class="page">
-
-    <!-- CITY SECTION -->
-    <section class="city-section" id="citySection">
-      <h2>Izaberi grad</h2>
-      <div class="city-grid" id="cityGrid"></div>
-    </section>
-
-    <!-- DASHBOARD (hidden until city selected) -->
-    <section class="dashboard" id="dashboard" style="display:none">
-      <div class="dash-top">
-        <div>
-          <h2 id="cityName">—</h2>
-          <p class="city-coords" id="cityCoords"></p>
-        </div>
-        <button class="back-btn" onclick="goBack()">← Svi gradovi</button>
-      </div>
-
-      <!-- Loading -->
-      <div id="loadingWrap" class="loading-state" style="display:none">
-        <div class="spinner"></div>
-        <p>Učitavam podatke...</p>
-      </div>
-
-      <!-- Results -->
-      <div id="results" style="display:none">
-
-        <!-- Tip bar na vrhu -->
-        <div class="tip-bar" id="tipBar">
-          <div class="tip-top">
-            <span class="tip-badge" id="tipBadge"></span>
-            <strong id="tipTitle"></strong>
-          </div>
-          <p id="tipDesc"></p>
-        </div>
-
-        <!-- 3 grupe -->
-        <div class="groups" id="groupsWrap"></div>
-
-        <!-- Chart -->
-        <div class="chart-section">
-          <div class="chart-label">5-dnevna prognoza · dnevni maksimum (zrna/m³)</div>
-          <div class="chart-wrap" id="chartWrap"></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- LEGEND SECTION -->
-    <section class="legend-section" id="legendSection">
-      <h2>Razumevanje indeksa</h2>
-      <div class="legend-grid-inline">
-        <div class="legend-item" style="--c:#4ade80"><span class="dot"></span><div><strong>0–10 · Nizak</strong><p>Bezbedno za većinu. Minimalni simptomi čak i kod osetljivih osoba.</p></div></div>
-        <div class="legend-item" style="--c:#facc15"><span class="dot"></span><div><strong>10–30 · Umeren</strong><p>Osetljive osobe mogu imati blage simptome. Preporučuje se oprez.</p></div></div>
-        <div class="legend-item" style="--c:#fb923c"><span class="dot"></span><div><strong>30–60 · Visok</strong><p>Simptomi verovatni kod alergičara. Uzimajte lekove preventivno.</p></div></div>
-        <div class="legend-item" style="--c:#f87171"><span class="dot"></span><div><strong>60–120 · Veoma visok</strong><p>Izbegavajte boravak napolju. Zatvorite prozore.</p></div></div>
-        <div class="legend-item" style="--c:#c084fc"><span class="dot"></span><div><strong>120+ · Ekstremno</strong><p>Ostanite unutra. Konsultujte se sa lekarom.</p></div></div>
-      </div>
-    </section>
-
-  </div>
+  </section>
+    
+  </main>
 
   <footer>
-    <p>Podaci: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> · Ovaj sajt je informativnog karaktera i ne zamenjuje medicinski savet.</p>
+    <p>Ovaj sajt je informativnog karaktera i ne zamenjuje medicinski savet.</p>
+    <p class="build-time">Poslednji build: <span id="buildTime">2026-05-25T22:07:19.129Z</span></p>
   </footer>
 
-  <script src="app.js"></script>
+  <script>
+    // Theme
+    function setTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('polenTheme', t);
+      document.getElementById('optDark').classList.toggle('active', t === 'dark');
+      document.getElementById('optLight').classList.toggle('active', t === 'light');
+    }
+    (function() {
+      var t = localStorage.getItem('polenTheme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      setTheme(t);
+    })();
+
+    // Date
+    document.getElementById('headerDate').textContent =
+      new Date().toLocaleDateString('sr-Latn-RS', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      });
+
+    // Build time
+    var bt = document.getElementById('buildTime');
+    if (bt) {
+      bt.textContent = new Date(bt.textContent).toLocaleString('sr-Latn-RS');
+    }
+  </script>
 </body>
 </html>
