@@ -24,6 +24,7 @@
   --text:      #202124;
   --muted:     #5f6368;
   --accent:    #1a73e8;
+  --logo-em:   #1a6b2a;
   --header-bg: rgba(255,255,255,0.95);
   --shadow:    0 1px 3px rgba(60,64,67,0.12), 0 1px 2px rgba(60,64,67,0.08);
   --shadow-hover: 0 4px 12px rgba(60,64,67,0.15), 0 2px 6px rgba(60,64,67,0.10);
@@ -39,6 +40,7 @@
   --text:      #e8eaed;
   --muted:     #9aa0a6;
   --accent:    #8ab4f8;
+  --logo-em:   #4caf50;
   --header-bg: rgba(32,33,36,0.95);
   --shadow:    0 1px 3px rgba(0,0,0,0.3);
   --shadow-hover: 0 4px 12px rgba(0,0,0,0.4);
@@ -50,9 +52,9 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-sans);
 /* HEADER */
 header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 56px; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-.logo-img { height: 28px; width: auto; }
+.logo-img { height: 70px; width: auto; }
 .logo-text { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
-.logo-text em { color: #34a853; font-style: normal; }
+.logo-text em { color: var(--logo-em); font-style: normal; }
 .header-right { display: flex; align-items: center; gap: 10px; }
 .header-date { font-size: 11px; color: var(--muted); }
 .theme-toggle { display: flex; align-items: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 3px; gap: 2px; }
