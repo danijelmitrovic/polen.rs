@@ -50,7 +50,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-sans);
 /* HEADER */
 header { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 56px; background: var(--header-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-.logo-icon { font-size: 17px; }
+.logo-img { height: 28px; width: auto; }
 .logo-text { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--text); }
 .logo-text em { color: #34a853; font-style: normal; }
 .header-right { display: flex; align-items: center; gap: 10px; }
